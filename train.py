@@ -121,7 +121,7 @@ def get_config():
                         help='distributed backend')
     parser.add_argument('--seed', default=1, type=int,
                         help='seed for initializing training. ')
-    parser.add_argument('--gpu', default=None, type=int,
+    parser.add_argument('--gpu', default=0, type=int,
                         help='GPU id to use.')
     parser.add_argument('--multiprocessing-distributed', type=str2bool, default=False,
                         help='Use multi-processing distributed training to launch '
@@ -129,7 +129,7 @@ def get_config():
                              'fastest way to use PyTorch for either single node or '
                              'multi node data parallel training')
     # config file
-    parser.add_argument('--c', type=str, default='')
+    parser.add_argument('--c', type=str, default='config/openset_cv/iomatch/iomatch_cifar10_150_0.yaml')
 
     # add algorithm specific parameters
     args = parser.parse_args()

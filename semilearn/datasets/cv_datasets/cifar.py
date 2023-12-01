@@ -22,7 +22,7 @@ def get_cifar_openset(args, alg, name, num_labels, num_classes, data_dir='./data
     name = name.split('_')[0]  # cifar10_openset -> cifar10
     data_dir = os.path.join(data_dir, name.lower())
     dset = getattr(torchvision.datasets, name.upper())
-    dset = dset(data_dir, train=True, download=False)
+    dset = dset(data_dir, train=True, download=True)
     data, targets = dset.data, dset.targets
 
     crop_size = args.img_size
